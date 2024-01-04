@@ -125,17 +125,19 @@ q29("E");
 첫번째 입력에서는 문자열이 입력되고 두번째에는 찾을 문자가 입력되어야함
 그 문자가 시작하는 index를 반환하는 프로그램을 만드시오
 
+// indexOf : 문자열에서 내가 찾는 단어를 찾아 겹치는 단어의 첫번째 인덱스번호를 반환해줌
+
 pineapple is yummy
 apple
 계획
 단어와 단어가 겹칠때 첫번째 인덱스
 */
-function q30(input, find) {
-  const splitinput = input.split("");
-  const splitfind = find.split("");
-  console.log(splitinput, splitfind);
+function q30(input, word) {
+  const str = input;
+  const find = word;
+  const result = str.indexOf(find);
+  console.log(`${word}의 첫번째 index:${result}`);
 }
 //입력값
-q30("pineapple is yummy", "apple");
-
-//출력값 4
+q30("watermellon is yummy", "mellon");
+//출력값 5
