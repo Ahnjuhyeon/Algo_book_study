@@ -149,12 +149,12 @@ function Q39(input) {
   console.log(split);
 }
 //입력값
-Q39("hqllo my namq is hyqwon");
-//출력값 hello my name is hyewon
+Q39("querty");
+//출력값 hello my name is hyewon //hqllo my namq is hyqwon
 
 /*--------------------------------------------------------------------*/
 /*
- * 40.
+ * 40. 놀이동산에 가자
 다음 중 변수 i가 6의 배수인지 확인하는 방법으로 옳바른 것은? 2번
 1) i / 6 == 0  => 결과가 0인지를 확인 이것은 i가 6의 배수인지를 확인하는 것이 아닙니다.     
 2) i % 6 == 0
