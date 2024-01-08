@@ -104,5 +104,46 @@ let : 변수 ,키워드 이름 중복 선언 금지
 const : 상수, 반드시 선언과 동시에 초기화해야 한다. 재할당 금지!
 
 16장 프로퍼티 어트리뷰트
+프로퍼티 상태란? 
+프로퍼티의 값, 값의 갱신 여부 ,열거가능여부 , 재정의 가능여부 를 말한다
+예)
+const person ={
+  name:"lee"
+}
+console.log(Object.getOwnPropertyDescriptor)
+// {value:"lee", writable:true, enumerable:true, configurable:true}
+(Object.getOwnPropertyDescriptor)이 메서드는 프로퍼티 어트리뷰트 정보를 제공하는
+프로퍼티 디스크립터객체를 반환
+접근자 프로퍼티 : __proto__ (getter, setter)
+데이터 프로퍼티 : {value:"lee", writable:true, enumerable:true, configurable:true}
+             디스크립터 객체의 프로퍼티를 누락하면, undefined,false가 기본값
+데이터프로퍼티는 확장이 금지된 객체는 프로퍼티 추가가 금지!
+Object.isExtensible : 확장여부를 확인 할 수 있다
+Object.PreventExtensible : 확장이 금지된다
+delete : 추가는 안되자만 삭제는 가능
+Object.defineProperty : 프로퍼티 정의에 의한 프로퍼티 추가도 금지
+Object.seal : 객체를 밀봉한다, 밀봉된 객체는 읽기와 쓰기만 가능여부 // 확인방법 : Object.isSeal(변수명)
+Object.freeze : 객체를 동결한다, 동결된 객체는 읽기만 가능 // 확인방법 : Object.isFrozon(변수명)
 
+17장 생성자 함수에 의한 객체 생성
+장점: 객채 생성 방식은 직관적이고 간편, 구조가 동일한 객체 여러개를 간편하게 생성
+단점 : 객체를 여러개 생성해야하는 경우 매번 같은 프로퍼티 기술해야하기에 비효율!
+Object 생성자 함수 : new Object 호출하면 빈 객체를 생성하여 반환
+Object 외에도 String, Number, Boolean Array ... 
+[new] : new 연산자와 함께 호출하면 생성자 함수로 동작 없다면??? 일반함수로 동작
+어려운데?
+
+18장 일급객체
+-함수는 변수,객체(배열도포함)에 저장할 수 있다
+-함수의 매개변수에 전달할 수 있다
+-함수의 반환값으로 사용할 수 있다
+장점 : 일반 객체와 같이 함수의 매개변수에 전달할 수 있으며 함수의 반환값으로 사용할 수 있다
+
+argumenst프로퍼티(모든 인수는 여기 전달 개 수로 나옴)
+함수 호출시 전달된 인수들의 정보를 담고 있는 순회가능한 "유사배열 객체"이며 함수 내부에서 지역변수 처럼 가능 즉, 외부 불가능
+개 수를 보여주는데 개수가 매개변수보다 적으면 NaN 일치하면 일지할 개 수 초과하면 무시하고 포함된 개수만 반환
+에러가 따로 발생하지 않는다 
+[유사배열 객체]: length 프로퍼티를 가진 객체로 for문으로 순회할 수 있는 객체
+
+19장 
 
