@@ -155,12 +155,35 @@ Q39("querty");
 /*--------------------------------------------------------------------*/
 /*
  * 40. 놀이동산에 가자
-다음 중 변수 i가 6의 배수인지 확인하는 방법으로 옳바른 것은? 2번
-1) i / 6 == 0  => 결과가 0인지를 확인 이것은 i가 6의 배수인지를 확인하는 것이 아닙니다.     
-2) i % 6 == 0
-3) i & 6 == 0       
-4) i | 6 == 0 
-5) i // 6 == 0
+원범이가 놀이동산 갔다 원범이와 친구들 총 몇명이 탈 수 있는지 알 수 있는 프로그램을 만들자
+
+첫번째 입력은 제한 무게가 주어지고 , 두번째 입력으로는 인원수 다음 입력으로는 탑승 할 친구들의 몸무게 
+몸무게는 무작위로 주어질 수 있다.
 
 */
+function Q40(input) {
+  const inputarr = input.split(",");
+  const maximumWeight = parseInt(inputarr[0]);
+  const maxPersons = parseInt(inputarr[1]);
+  const friendWeights = inputarr.slice(2).map((weight) => parseInt(weight));
+  console.log(friendWeights);
+  // 누적된 총 몸무게를 저장할 변수
+  let totalWeight = 0;
+  // 탑승한 친구들의 수를 저장할 변수
+  let count = 0;
+
+  for (const weight of friendWeights) {
+    if (totalWeight + weight <= maximumWeight && count < maxPersons) {
+      totalWeight += weight;
+      count++;
+    } else {
+      break; // 탑승 불가능한 경우 종료
+    }
+  }
+
+  console.log(count); // 탑승 가능한 친구들의 수 출력
+}
+//입력값
+Q40("50,5,20,20,20,20,20");
+//출력값 2가 나와야함
 /*--------------------------------------------------------------------*/
