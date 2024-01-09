@@ -166,7 +166,7 @@ function Q40(input) {
   const maximumWeight = parseInt(inputarr[0]);
   const maxPersons = parseInt(inputarr[1]);
   const friendWeights = inputarr.slice(2).map((weight) => parseInt(weight));
-  console.log(friendWeights);
+  console.log(friendWeights); //20,20,20,20,20
   // 누적된 총 몸무게를 저장할 변수
   let totalWeight = 0;
   // 탑승한 친구들의 수를 저장할 변수
