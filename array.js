@@ -1,13 +1,13 @@
-// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// let result = array.reduceRight((a, b) => a + b, 0);
-// console.log(result);
-const array1 = [
-  [0, 1],
-  [2, 3],
-  [4, 5],
-];
+const array = ["one", "two", "three", "four", "five"];
 
-const result = array1.reduceRight((a, b) => a.concat(b));
+array.splice(1, 1, "hello");
+console.log(array);
+// [ 'one', 'hello', 'three', 'four', 'five' ]
 
-console.log(result);
-// Expected output: Array [4, 5, 2, 3, 0, 1]
+array.splice(3, 1, "world");
+console.log(array);
+// [ 'one', 'hello', 'three', 'world', 'five' ]
+
+console.log(array);
+// [ 'one', 'hello', 'three', 'world', 'five' ]
+// 원본 배열은 변형된다
