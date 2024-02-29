@@ -566,3 +566,20 @@ console.log(result) //[1,2,3,5,4]
 const result = values.filter((val,i,_values) => _values.indexOf(val) === i);
   [Set]
 const result = [...new Set(values)]
+
+28장 Number
+- Number 생성자 함수는 원시 타입인 숫자를 다룰 때 유용한 프로퍼티와 메서드를 제공
+- new 연산자와 함께 호출하여 인스턴스를 생성
+ ex) const numObj = new Number()
+     console.log(numObj) // Number{[[PrimitiveValue]] : 0}
+     Number 생성자 함수의 인수로 숫자를 전달하면서 new 연산자와 함께 호출하면 
+     [[NumberData]] 내부슬롯에 인수로 전달받은 숫자를 할당한 Number 래퍼 객체를 생성한다
+
+     인수로 숫자가 아닌 값을 전달받으면 인수를 강제로 숫자로 변환한다 
+     const numObj = new Number(10)
+     console.log(numObj) // Number{[[PrimitiveValue]] : 10}
+     const numObj = new Number('10')
+     console.log(numObj) // Number{[[PrimitiveValue]] : 10}
+     const numObj = new Number('hello')
+     console.log(numObj) // Number{[[PrimitiveValue]] : NaN}
+      
