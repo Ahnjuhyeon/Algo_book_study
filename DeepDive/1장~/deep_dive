@@ -582,4 +582,5 @@ const result = [...new Set(values)]
      console.log(numObj) // Number{[[PrimitiveValue]] : 10}
      const numObj = new Number('hello')
      console.log(numObj) // Number{[[PrimitiveValue]] : NaN}
-      
+
+Number의 프로퍼티  
