@@ -647,14 +647,14 @@ Data.getMonth : Data의 월을 나타내는 0~11의 정수를 '반환', 1월은 
          => today.setFullYear(2000)
          => today.getFullYear() //2000
 Data.setMonth : Data의 월을 나타내는 0~11의 정수를 '설정', 1월은 0, 11 은 12월
-          => const today = new Data()
+         => const today = new Data()
          => today.setMonth(0) //1월
          => today.getMonth() //0
 [날짜]
 Data.getDate : Data의 날짜를 나타내는 1~31의 정수를 '반환'
          => new Data('2024/07/22').getDate() // 22
 Data.setDate : Data의 날짜를 나타내는 1~31의 정수를  '설정'
-          => const today = new Data()
+         => const today = new Data()
          => today.setDate(1) 
          => today.getDate() //1
 [요일]
@@ -665,7 +665,7 @@ Data.getDay : Data의 요일을 나타내는 0~6의 정수를 반환, 0 일요�
 Data.getHours : Data의 시간을 나타내는 0~23의 정수를 '반환'
          => new Data('2024/07/22/12:00').getHours() // 12
 Data.setHours : Data의 시간을 나타내는 0~23의 정수를 '설정' , 옵션으로 분, 초, 밀리초 순으로 설정가능
-          => const today = new Data()
+         => const today = new Data()
          => today.setHours(7) 
          => today.getHours() //7
 
@@ -673,7 +673,7 @@ Data.setHours : Data의 시간을 나타내는 0~23의 정수를 '설정' , 옵�
 Data.getMinutes : Data의 분을 나타내는 0~59의 정수를 '반환'
          => new Data('2024/07/22/12:30').getMinuts() // 30
 Data.setMinutes : Data의 분을 나타내는 0~59의 정수를 '설정', 옵션으로 초, 밀리초 순으로 설정가능
-          => const today = new Data()
+         => const today = new Data()
          => today.setMinutes(50) 
          => today.getMinutes() //50
 
@@ -681,7 +681,7 @@ Data.setMinutes : Data의 분을 나타내는 0~59의 정수를 '설정', 옵션
 Data.getSeconds : Data의 초을 나타내는 0~59의 정수를 '반환'
          => new Data('2024/07/22/12:30:10').getSeconds() // 10
 Data.setSeconds : Data의 초을 나타내는 0~59의 정수를 '설정', 옵션으로 밀리초 설정가능
-          => const today = new Data()
+         => const today = new Data()
          => today.setSeconds(50) 
          => today.getSeconds() //50
 
@@ -689,6 +689,12 @@ Data.setSeconds : Data의 초을 나타내는 0~59의 정수를 '설정', 옵션
 Data.getMilliseconds : Data의 밀리초을 나타내는 0~999의 정수를 '반환'
          => new Data('2024/07/22/12:30:10:150').getMilliseconds() // 150
 Data.setMilliseconds : Data의 초을 나타내는 0~999의 정수를 '설정'
-          => const today = new Data()
+         => const today = new Data()
          => today.setMilliseconds(123) 
          => today.getMilliseconds() // 123
+
+문자열
+Data.toDateString : 사람이 읽을 수 있는 문자열로 Date 객체의 날짜를 반환
+        => const today = new Data('2020/07/24/12:30')
+        => today.toString() // Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
+        => today.toDateString() // Fri Jul 24 2020
