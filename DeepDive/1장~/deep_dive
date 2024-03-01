@@ -618,83 +618,104 @@ Math.max : 전달받은 인수중에서 가장 큰수를 반환한다. 인수가
 Math.min : 전달받은 인수중에서 가장 작은수를 반환한다. 인수가 전달되지 않으면 Infinity 반환
           => Math.max(1,2,4) // 4
 
-30장 Data
-- Data는 생성자 함수다.
+30장 Date
+- Date 생성자 함수다.
 - 내부적으로 날짜와 시간을 나타내는 정수값을 갖는다
-new Data() : 인수없이 new 연산자와 호출하면 날짜와 시간을 가지는 Data '객체'를 반환 
+new Date() : 인수없이 new 연산자와 호출하면 날짜와 시간을 가지는 Date '객체'를 반환 
           // Mon Jul 06 2024 21:35:18 GMT+0900 (대한민국 표준시)
-Data() : 객체를 반환하지않고 날짜와 시간을 가지는 '문자열'로 반환
+Date() : 객체를 반환하지않고 날짜와 시간을 가지는 '문자열'로 반환
           //" Mon Jul 06 2024 21:35:18 GMT+0900 (대한민국 표준시)"
-new Data(milliseconds) : 숫자 타입의 밀리초를 인수로 전달하면 1970년1월1일 00:00:00(UTC) 기점으로 
+new Date(milliseconds) : 숫자 타입의 밀리초를 인수로 전달하면 1970년1월1일 00:00:00(UTC) 기점으로 
                          전달된 밀리초만금 경과한 시간을 객체로 반환
-      // new Data(864000) => Fri Jan 02 1970 09:00:00 GMT+0900 (864000은 하루 즉, 1day이다)
+      // new Date(864000) => Fri Jan 02 1970 09:00:00 GMT+0900 (864000은 하루 즉, 1day이다)
 
-Data.Now : 1970년1월1일 00:00:00(UTC) 기점으로 현재시간까지 경과한 밀리초를 숫자로 반환
-         => const now = Data.Now() // 1593971539112
-            new Data(now) // Mon Jul 06 2024 21:35:18 GMT+0900 (대한민국 표준시)
-Data.parse : 1970년1월1일 00:00:00(UTC) 기점으로 인수로 전달된 지정 시간까지의 밀리초를 숫자로 반환
-         => Data.parse('Jan 2, 1970 00:00:00 UTC') // 86400000
+Date.Now : 1970년1월1일 00:00:00(UTC) 기점으로 현재시간까지 경과한 밀리초를 숫자로 반환
+         => const now = Date.Now() // 1593971539112
+            new Date(now) // Mon Jul 06 2024 21:35:18 GMT+0900 (대한민국 표준시)
+Date.parse : 1970년1월1일 00:00:00(UTC) 기점으로 인수로 전달된 지정 시간까지의 밀리초를 숫자로 반환
+         => Date.parse('Jan 2, 1970 00:00:00 UTC') // 86400000
 [월]
-Data.getFullYear : Data의 연도를 나타내는 정수를 '반환'
-         => new Data('2024/07/22').getFullYear() // 2024
-Data.setFullYear : Data의 연도를 나타내는 정수를 '설정'
-         => const today = new Data()
+Date.getFullYear : Date의 연도를 나타내는 정수를 '반환'
+         => new Date('2024/07/22').getFullYear() // 2024
+Date.setFullYear : Date의 연도를 나타내는 정수를 '설정'
+         => const today = new Date()
          => today.setFullYear(2000)
          => today.getFullYear() //2000
 [달]
-Data.getMonth : Data의 월을 나타내는 0~11의 정수를 '반환', 1월은 0, 11 은 12월
-         => new Data('2024/07/22').getMonth() // 6
+Date.getMonth : Date의 월을 나타내는 0~11의 정수를 '반환', 1월은 0, 11 은 12월
+         => new Date('2024/07/22').getMonth() // 6
          => today.setFullYear(2000)
          => today.getFullYear() //2000
-Data.setMonth : Data의 월을 나타내는 0~11의 정수를 '설정', 1월은 0, 11 은 12월
-         => const today = new Data()
+Date.setMonth : Date의 월을 나타내는 0~11의 정수를 '설정', 1월은 0, 11 은 12월
+         => const today = new Date()
          => today.setMonth(0) //1월
          => today.getMonth() //0
 [날짜]
-Data.getDate : Data의 날짜를 나타내는 1~31의 정수를 '반환'
-         => new Data('2024/07/22').getDate() // 22
-Data.setDate : Data의 날짜를 나타내는 1~31의 정수를  '설정'
-         => const today = new Data()
+Date.getDate : Date의 날짜를 나타내는 1~31의 정수를 '반환'
+         => new Date('2024/07/22').getDate() // 22
+Date.setDate : Date의 날짜를 나타내는 1~31의 정수를  '설정'
+         => const today = new Date()
          => today.setDate(1) 
          => today.getDate() //1
 [요일]
-Data.getDay : Data의 요일을 나타내는 0~6의 정수를 반환, 0 일요일, 6 토요일
-         => new Data('2024/07/22').getDay() // 5 => 금요일 
+Date.getDay : Date의 요일을 나타내는 0~6의 정수를 반환, 0 일요일, 6 토요일
+         => new Date('2024/07/22').getDay() // 5 => 금요일 
 
 [시간] 
-Data.getHours : Data의 시간을 나타내는 0~23의 정수를 '반환'
-         => new Data('2024/07/22/12:00').getHours() // 12
-Data.setHours : Data의 시간을 나타내는 0~23의 정수를 '설정' , 옵션으로 분, 초, 밀리초 순으로 설정가능
-         => const today = new Data()
+Date.getHours : Date의 시간을 나타내는 0~23의 정수를 '반환'
+         => new Date('2024/07/22/12:00').getHours() // 12
+Date.setHours : Date의 시간을 나타내는 0~23의 정수를 '설정' , 옵션으로 분, 초, 밀리초 순으로 설정가능
+         => const today = new Date()
          => today.setHours(7) 
          => today.getHours() //7
 
 [분] 
-Data.getMinutes : Data의 분을 나타내는 0~59의 정수를 '반환'
-         => new Data('2024/07/22/12:30').getMinuts() // 30
-Data.setMinutes : Data의 분을 나타내는 0~59의 정수를 '설정', 옵션으로 초, 밀리초 순으로 설정가능
-         => const today = new Data()
+Date.getMinutes : Date의 분을 나타내는 0~59의 정수를 '반환'
+         => new Date('2024/07/22/12:30').getMinuts() // 30
+Date.setMinutes : Date의 분을 나타내는 0~59의 정수를 '설정', 옵션으로 초, 밀리초 순으로 설정가능
+         => const today = new Date()
          => today.setMinutes(50) 
          => today.getMinutes() //50
 
 [초] 
-Data.getSeconds : Data의 초을 나타내는 0~59의 정수를 '반환'
-         => new Data('2024/07/22/12:30:10').getSeconds() // 10
-Data.setSeconds : Data의 초을 나타내는 0~59의 정수를 '설정', 옵션으로 밀리초 설정가능
-         => const today = new Data()
+Date.getSeconds : Date의 초을 나타내는 0~59의 정수를 '반환'
+         => new Date('2024/07/22/12:30:10').getSeconds() // 10
+Date.setSeconds : Date 초을 나타내는 0~59의 정수를 '설정', 옵션으로 밀리초 설정가능
+         => const today = new Date()
          => today.setSeconds(50) 
          => today.getSeconds() //50
 
 [밀리초] 
-Data.getMilliseconds : Data의 밀리초을 나타내는 0~999의 정수를 '반환'
-         => new Data('2024/07/22/12:30:10:150').getMilliseconds() // 150
-Data.setMilliseconds : Data의 초을 나타내는 0~999의 정수를 '설정'
-         => const today = new Data()
+Date.getMilliseconds : Date 밀리초을 나타내는 0~999의 정수를 '반환'
+         => new Date('2024/07/22/12:30:10:150').getMilliseconds() // 150
+Date.setMilliseconds : Date 초을 나타내는 0~999의 정수를 '설정'
+         => const today = new Date()
          => today.setMilliseconds(123) 
          => today.getMilliseconds() // 123
 
 문자열
-Data.toDateString : 사람이 읽을 수 있는 문자열로 Date 객체의 날짜를 반환
-        => const today = new Data('2020/07/24/12:30')
+Date.toDateString : 사람이 읽을 수 있는 문자열로 Date 객체의 날짜를 반환
+        => const today = new Date('2020/07/24/12:30')
         => today.toString() // Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
         => today.toDateString() // Fri Jul 24 2020
+
+Date.toTimeString : 사람이 읽을 수 있는 Date 객체의 시간을 문자열로 반환
+        => const today = new Date('2020/07/24/12:30')
+        => today.toString() // Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
+        => today.toTimeString() // 12:30:00 GMT+0900 (대한민국 표준시)
+
+Date.toLocalString : 인수로 전달한 로컬 기준으로 Date 객체의 날짜와 시간을 문자열로 반환
+        => const today = new Date('2020/07/24/12:30')
+        => today.toString() // Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
+        => today.toLocalString() // 2020. 07. 24. 오후 12:30:00
+        => today.toLocalString('ko-KR') // 2020. 07. 24. 오후 12:30:00
+        => today.toLocalString('en-US') // 7/24/2020, 12:30:00 PM
+
+Date.toLocalTimeString : 인수로 전달한 로컬 기준으로 Date 객체의 시간을 문자열로 반환
+        => const today = new Date('2020/07/24/12:30')
+        => today.toString() // Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
+        => today.toLocalTimeString() // 오후 12:30:00
+        => today.toLocalTimeString('ko-KR') // 오후 12:30:00
+        => today.toLocalTimeString('en-US') // 12:30:00 PM
+
+31장 RegExp 정규 표현식
