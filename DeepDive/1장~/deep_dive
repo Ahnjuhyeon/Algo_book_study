@@ -584,3 +584,13 @@ const result = [...new Set(values)]
      console.log(numObj) // Number{[[PrimitiveValue]] : NaN}
 
 Number의 프로퍼티  
+Number.isFinite : 인수로 전달된 숫자값이 유한수이면 true, 무한수이면 false
+Number.isInteger : 인수로 전달된 숫자값이 정수이면 true, 아니면 false
+Number.isSafeInteger : 인수로 전달된 숫자값이 안전한 정수이면 true, 아니면 false
+                      => 100000000000000 // t 
+                         100000000000001 // f 
+Number.NaN : 인수로 전달된 숫자값이 NaN인지 판별하여 t/f 로 반환 
+Number.toFixed : 숫자를 반올림하여 문자열로 반환
+                => 12345.6789.toFixed(2) // 12345.68 소수점 이하 2자릿수 유효 나머지 반올림
+Number.toString : 숫자를 문자열로 변환하여 반환한다
+                => (16).toString(8) //20 8진수 문자열을 반환
