@@ -719,5 +719,7 @@ Date.toLocalTimeString : 인수로 전달한 로컬 기준으로 Date 객체의 
         => today.toLocalTimeString('en-US') // 12:30:00 PM
 
 31장 RegExp 정규 표현식
+- 정규 표현식 : 일정한 패턴을 가진 문자열의 집합을 표현하기위해 사용하는 형식언어
 32장 
 33장 
+강아지 수술때문에... 진행 늦음 ㅠㅠ...
